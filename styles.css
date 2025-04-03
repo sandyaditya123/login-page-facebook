@@ -21,11 +21,15 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
 }
 
-.title img {
-    width: 280px;
+.title img#desktop {
+    width: 320px;
+}
+
+.title img#mobile {
+    display: none;
 }
 
 .title p {
@@ -63,14 +67,14 @@ body {
     outline: none;
 }
 
-.login-form form input[type="button"] {
+.login-form form input#Login { /* Login button */
     background-color: #0866FF;
     color: #FFF;
     font-weight: bold;
     border: none;
 }
 
-.login-form form input[type="button"]:hover {
+.login-form form input#Login:hover {
     background-color: #2075FD;
     cursor: pointer;
 }
@@ -85,7 +89,7 @@ body {
     cursor: pointer;
 }
 
-.login-form form button {
+.login-form form button#Create_Account  { /* Create account button */
     background-color: #42b72a;
     color: #FFF;
     font-weight: bold;
@@ -95,23 +99,87 @@ body {
     border-radius: 5px;
 }
 
-.login-form form button:hover {
+.login-form form button#Create_Account:hover {
     background-color: #4fc038;
     cursor: pointer;
 }
 
-h6 {
+.login-form h6 {
     text-align: center;
     margin-top: 30px;
     font-size: 14px;
     font-weight: 500;
 }
 
-h6 span {
+.login-form h6 span {
     font-weight: 700;
     cursor: pointer;
 }
 
-h6 span:hover {
+.login-form h6 span:hover {
     text-decoration: underline;
+}
+
+@media screen and (max-width: 872px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        overflow: auto;
+    }
+    .title {
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+    }
+    .title img#desktop {
+        display: none;
+    }
+    .title img#mobile {
+        display: block;
+        width: 150px;
+    }
+    .title p {
+        display: none;
+    }
+    .login-form form {
+        width: 100vw;
+        padding-block: 0;
+        background-color: transparent;
+        box-shadow: 0 0 0 black;
+        border-radius: 0;
+    }
+    .login-form form input {
+        width: 95%;
+        height: 60px;
+        font-size: 1.5rem;
+        padding: 15px;
+        border-radius: 12px;
+    }
+    .login-form form input[type="button"] {
+        border-radius: 30px;
+        font-weight: normal;
+    }
+    .login-form p {
+        font-size: 1.3rem;
+    }
+    .login-form form button#Create_Account {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    .login-form h6 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin-top: 0;
+        margin-bottom: 3rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        position: static;
+    }
 }
