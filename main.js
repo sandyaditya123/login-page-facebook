@@ -1,4 +1,4 @@
-let email, password, login;
+let email, password;
 
 document.getElementById("Login").onclick = function() {
     email = document.getElementById("Email").value;
